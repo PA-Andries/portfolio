@@ -1,7 +1,7 @@
 # portfolio — status
 
 **Phase:** building
-**Last deploy:** never
+**Last deploy:** 2026-04-28 — https://portfolio.pierrotandries.workers.dev
 **Open case studies:**
 - doc-sorter Phase 0 (drafting Sun May 3 Design block, file `src/content/case-studies/doc-sorter-phase-0.mdx`)
 
@@ -28,4 +28,5 @@
 
 ## Recent activity
 
+- 2026-04-28: Cloudflare auto-deploy connected — first build live at https://portfolio.pierrotandries.workers.dev
 - 2026-04-28: scaffolded with Astro + Tailwind v4 + MDX (phase moved `not-started` → `building`)
