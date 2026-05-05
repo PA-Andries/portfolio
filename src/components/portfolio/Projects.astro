@@ -1,0 +1,82 @@
+---
+import { COPY } from "../../data/copy";
+import Icon from "./Icon.astro";
+
+const fr = COPY.fr.projects;
+const en = COPY.en.projects;
+---
+
+<section id="projets" class="section">
+  <div class="container-pf">
+    <div class="glass" style="padding:56px 40px">
+      <div class="eyebrow">
+        <span class="i18n-fr">{fr.eyebrow}</span><span class="i18n-en">{en.eyebrow}</span>
+      </div>
+
+      <h2 class="display h2-pf" style="text-wrap:balance">
+        <span style="display:block">
+          <span class="i18n-fr">{fr.h2a}</span><span class="i18n-en">{en.h2a}</span>
+        </span>
+        <span class="text-grad-cyan" style="display:block">
+          <span class="i18n-fr">{fr.h2b}</span><span class="i18n-en">{en.h2b}</span>
+        </span>
+      </h2>
+
+      <p style="margin-top:18px;color:var(--text2);font-size:16px;max-width:680px">
+        <span class="i18n-fr">{fr.desc}</span><span class="i18n-en">{en.desc}</span>
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:32px">
+        {
+          fr.tops.map((s, i) => (
+            <div
+              class="stat"
+              style={`color: ${s.c === "cyan" ? "var(--cyan)" : "var(--orange)"}`}
+            >
+              <div class="num" style={`font-size: ${s.n.length > 5 ? 28 : 40}px`}>
+                <span class="i18n-fr">{s.n}</span><span class="i18n-en">{en.tops[i].n}</span>
+              </div>
+              <div class="lbl">
+                <span class="i18n-fr">{s.l}</span><span class="i18n-en">{en.tops[i].l}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:32px">
+        {
+          fr.cards.map((c, i) => (
+            <div class={`pcard ${c.color === "orange" ? "orange" : ""}`}>
+              <div style="display:flex;align-items:center;gap:14px">
+                <div class="ico">
+                  <Icon name={c.icon as any} />
+                </div>
+                <div class="mono" style="color:var(--dim);font-size:9px">{c.meta}</div>
+              </div>
+              {c.soon && (
+                <span class="badge-soon">
+                  <span class="i18n-fr">{COPY.fr.ui.detailsSoon}</span><span class="i18n-en">{COPY.en.ui.detailsSoon}</span>
+                </span>
+              )}
+              <h3 class="display" style="font-size:24px;margin-top:18px;line-height:1.05;text-wrap:balance">
+                <span class="i18n-fr">{c.title}</span><span class="i18n-en">{en.cards[i].title}</span>
+              </h3>
+              <p style="margin-top:14px;color:var(--text2);font-size:14px;line-height:1.55">
+                <span class="i18n-fr">{c.desc}</span><span class="i18n-en">{en.cards[i].desc}</span>
+              </p>
+              <div style="margin-top:16px">
+                <span class="i18n-fr">
+                  {c.tags.map((tg) => <span class="chip">{tg}</span>)}
+                </span>
+                <span class="i18n-en">
+                  {en.cards[i].tags.map((tg) => <span class="chip">{tg}</span>)}
+                </span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+---
+import { COPY } from "../../data/copy";
+
+const fr = COPY.fr.extra;
+const en = COPY.en.extra;
+---
+
+<section id="extra" class="section">
+  <div class="container-pf">
+    <div class="glass" style="padding:56px 40px">
+      <div class="eyebrow">
+        <span class="i18n-fr">{fr.eyebrow}</span><span class="i18n-en">{en.eyebrow}</span>
+      </div>
+
+      <h2 class="display h2-pf" style="text-wrap:balance">
+        <span style="display:block">
+          <span class="i18n-fr">{fr.h2a}</span><span class="i18n-en">{en.h2a}</span>
+        </span>
+        <span class="text-grad-cyan" style="display:block">
+          <span class="i18n-fr">{fr.h2b}</span><span class="i18n-en">{en.h2b}</span>
+        </span>
+      </h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:36px">
+        <div>
+          <div class="mono" style="color:var(--cyan);font-size:11px;margin-bottom:14px">
+            <span class="i18n-fr">{fr.engTitle}</span><span class="i18n-en">{en.engTitle}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            {
+              fr.eng.map((e, i) => (
+                <div class="pcard" style="padding:22px">
+                  <div class="mono" style="color:var(--dim);font-size:9px">{e.date}</div>
+                  <div class="display" style="font-size:18px;margin-top:6px;line-height:1.1">
+                    <span class="i18n-fr">{e.title}</span><span class="i18n-en">{en.eng[i].title}</span>
+                  </div>
+                  <div style="color:var(--text2);font-size:13px;margin-top:8px;line-height:1.55">
+                    <span class="i18n-fr">{e.desc}</span><span class="i18n-en">{en.eng[i].desc}</span>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="pcard" style="padding:22px">
+            <div class="mono" style="color:var(--cyan);font-size:11px;margin-bottom:12px">
+              <span class="i18n-fr">{fr.hobbiesTitle}</span><span class="i18n-en">{en.hobbiesTitle}</span>
+            </div>
+            <div>
+              <span class="i18n-fr">
+                {fr.hobbies.map((h) => <span class="chip">{h}</span>)}
+              </span>
+              <span class="i18n-en">
+                {en.hobbies.map((h) => <span class="chip">{h}</span>)}
+              </span>
+            </div>
+          </div>
+
+          <div class="pcard" style="padding:22px">
+            <div class="mono" style="color:var(--cyan);font-size:11px;margin-bottom:12px">
+              <span class="i18n-fr">{fr.langTitle}</span><span class="i18n-en">{en.langTitle}</span>
+            </div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+              {
+                fr.langs.map((l, i) => (
+                  <li style="color:var(--text2);font-size:14px;display:flex;gap:10px;align-items:baseline">
+                    <span style="color:var(--cyan)">›</span>
+                    <span class="i18n-fr">{l}</span><span class="i18n-en">{en.langs[i]}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

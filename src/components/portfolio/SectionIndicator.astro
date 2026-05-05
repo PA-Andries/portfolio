@@ -1,0 +1,16 @@
+---
+import { SECTIONS } from "../../data/copy";
+---
+
+<div class="sec-ind" data-section-indicator>
+  {
+    SECTIONS.map((s, i) => (
+      <button data-section-target={s.id} class={i === 0 ? "active" : ""} aria-label={s.labelFr}>
+        <span class="label">
+          <span class="i18n-fr">{s.labelFr}</span><span class="i18n-en">{s.labelEn}</span>
+        </span>
+        <span class="dot" />
+      </button>
+    ))
+  }
+</div>

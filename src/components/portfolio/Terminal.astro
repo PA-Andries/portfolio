@@ -1,0 +1,19 @@
+---
+// Terminal easter-egg — collapsed by default. Logic in portfolio.ts.
+---
+
+<button class="term-toggle" data-term-toggle title="terminal" aria-label="Open terminal">_</button>
+
+<div class="term-panel" data-term-panel role="dialog" hidden>
+  <div class="term-head">
+    <span class="dot" style="background:#FF8B3D"></span>
+    <span class="dot" style="background:#3DE0FF"></span>
+    <span class="dot" style="background:#6B7488"></span>
+    <span style="margin-left:8px">PA@PORTFOLIO ~ %</span>
+  </div>
+  <div class="term-body" data-term-body></div>
+  <form class="term-input-row" data-term-form>
+    <span class="term-prompt">›</span>
+    <input class="term-input" data-term-input autocomplete="off" placeholder="help" />
+  </form>
+</div>

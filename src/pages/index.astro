@@ -1,17 +1,36 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Backdrop from "../components/portfolio/Backdrop.astro";
+import NavPill from "../components/portfolio/NavPill.astro";
+import Hero from "../components/portfolio/Hero.astro";
+import About from "../components/portfolio/About.astro";
+import Projects from "../components/portfolio/Projects.astro";
+import Parcours from "../components/portfolio/Parcours.astro";
+import Extra from "../components/portfolio/Extra.astro";
+import FinalCTA from "../components/portfolio/FinalCTA.astro";
+import SectionIndicator from "../components/portfolio/SectionIndicator.astro";
+import Terminal from "../components/portfolio/Terminal.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Backdrop />
+  <NavPill />
+
+  <main>
+    <Hero />
+    <About />
+    <Projects />
+    <Parcours />
+    <Extra />
+    <FinalCTA />
+  </main>
+
+  <SectionIndicator />
+  <Terminal />
+
+  <div class="grain"></div>
+</BaseLayout>
+
+<script>
+  import "../scripts/portfolio";
+</script>

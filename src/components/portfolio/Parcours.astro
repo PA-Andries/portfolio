@@ -1,0 +1,74 @@
+---
+import { COPY } from "../../data/copy";
+
+const fr = COPY.fr.parcours;
+const en = COPY.en.parcours;
+---
+
+<section id="parcours" class="section">
+  <div class="container-pf">
+    <div class="glass" style="padding:56px 40px">
+      <div class="eyebrow">
+        <span class="i18n-fr">{fr.eyebrow}</span><span class="i18n-en">{en.eyebrow}</span>
+      </div>
+
+      <h2 class="display h2-pf" style="text-wrap:balance">
+        <span style="display:block">
+          <span class="i18n-fr">{fr.h2a}</span><span class="i18n-en">{en.h2a}</span>
+        </span>
+        <span class="text-grad-cyan" style="display:block">
+          <span class="i18n-fr">{fr.h2b}</span><span class="i18n-en">{en.h2b}</span>
+        </span>
+      </h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;margin-top:40px">
+        <div>
+          <div class="mono" style="color:var(--cyan);font-size:11px;margin-bottom:18px">
+            <span class="i18n-fr">{fr.xpTitle}</span><span class="i18n-en">{en.xpTitle}</span>
+          </div>
+          <div class="timeline">
+            {
+              fr.xp.map((x, i) => (
+                <div class="tl-item">
+                  <div class="mono" style="color:var(--dim);font-size:10px">
+                    <span class="i18n-fr">{x.date}</span><span class="i18n-en">{en.xp[i].date}</span>
+                  </div>
+                  <div class="display" style="font-size:18px;margin-top:6px">
+                    <span class="i18n-fr">{x.org}</span><span class="i18n-en">{en.xp[i].org}</span>
+                  </div>
+                  <div style="color:var(--text2);font-size:14px;margin-top:4px;font-weight:500">
+                    <span class="i18n-fr">{x.role}</span><span class="i18n-en">{en.xp[i].role}</span>
+                  </div>
+                  <div style="color:var(--dim);font-size:13px;margin-top:6px;line-height:1.5">
+                    <span class="i18n-fr">{x.desc}</span><span class="i18n-en">{en.xp[i].desc}</span>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div>
+          <div class="mono" style="color:var(--cyan);font-size:11px;margin-bottom:18px">
+            <span class="i18n-fr">{fr.eduTitle}</span><span class="i18n-en">{en.eduTitle}</span>
+          </div>
+          <div>
+            {
+              fr.edu.map((e, i) => (
+                <div class="form-row">
+                  <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap">
+                    <div class="display" style="font-size:16px">{e.name}</div>
+                    <div class="mono" style="color:var(--dim);font-size:9px">{e.meta}</div>
+                  </div>
+                  <div style="color:var(--text2);font-size:13px">
+                    <span class="i18n-fr">{e.desc}</span><span class="i18n-en">{en.edu[i].desc}</span>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

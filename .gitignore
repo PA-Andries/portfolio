@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local design briefs / handoff notes
+CLAUDE_DESIGN_PROMPT.md
+HANDOFF.md
+.claude-design-export/

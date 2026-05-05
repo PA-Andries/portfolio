@@ -1,0 +1,327 @@
+export type Lang = "fr" | "en";
+
+export interface SectionMeta {
+  id: string;
+  labelFr: string;
+  labelEn: string;
+}
+
+export const SECTIONS: SectionMeta[] = [
+  { id: "home", labelFr: "ACCUEIL", labelEn: "HOME" },
+  { id: "about", labelFr: "À PROPOS", labelEn: "ABOUT" },
+  { id: "projets", labelFr: "PROJETS", labelEn: "PROJECTS" },
+  { id: "parcours", labelFr: "PARCOURS", labelEn: "PATH" },
+  { id: "extra", labelFr: "HORS ÉCOLE", labelEn: "OUTSIDE" },
+  { id: "contact", labelFr: "CONTACT", labelEn: "CONTACT" },
+];
+
+export const COPY = {
+  fr: {
+    nav: {
+      home: "ACCUEIL",
+      projects: "PROJETS",
+      about: "À PROPOS",
+      parcours: "PARCOURS",
+      contact: "CONTACT",
+      cv: "MON CV",
+    },
+    hero: {
+      badge: "ÉLÈVE INGÉNIEUR · IMT ATLANTIQUE",
+      h1a: "SIGNAL,",
+      h1b: "TÉLÉCOMS & IA",
+      sub: [
+        "Stage de césure ",
+        "6 mois",
+        " dès ",
+        "juillet 2026",
+        ". Défense, aérospatial, radar / RF / IA appliquée.",
+      ],
+      cta1: "VOIR LES PROJETS",
+      cta2: "EXPLORER",
+      stat1l: "4 PROJETS",
+      stat1s: "SIGNAL · IA · INSTRUMENTATION",
+      stat2l: "1× THALES",
+      stat2s: "COLLABORATION INDUSTRIELLE",
+      stat3l: "FR · EN C1 · DE B2",
+      stat3s: "CAMBRIDGE FIRST · IELTS 8",
+    },
+    about: {
+      eyebrow: "— À PROPOS",
+      h2a: "RENDRE LE SIGNAL",
+      h2b: "ACCESSIBLE",
+      desc: "Élève ingénieur à IMT Atlantique, je me spécialise en télécommunications, traitement du signal, data science et intelligence artificielle. Intéressé par les systèmes de communication et les environnements techniques exigeants, je recherche un stage de césure de 6 mois à partir de juillet 2026, idéalement en aérospatial ou défense.",
+      stats: [
+        { n: "4", l: "PROJETS TECHNIQUES", c: "cyan" as const },
+        { n: "3", l: "LANGAGES PRINCIPAUX", c: "cyan" as const },
+        { n: "1×", l: "THALES × IMT ATLANTIQUE", c: "orange" as const },
+      ],
+    },
+    projects: {
+      eyebrow: "— PROJETS",
+      h2a: "QUATRE TERRAINS,",
+      h2b: "UNE LOGIQUE",
+      desc: "Signal, données, mesure. De la simulation MATLAB à la pipeline NLP locale.",
+      tops: [
+        { n: "THALES × IMT", l: "COLLABORATION INDUSTRIELLE 2025-26", c: "cyan" as const },
+        { n: "LCMV", l: "ALGORITHME ANTIBROUILLAGE mmW", c: "cyan" as const },
+        { n: "4", l: "DOMAINES TECHNIQUES", c: "orange" as const },
+      ],
+      cards: [
+        {
+          icon: "radar",
+          color: "cyan" as const,
+          meta: "THALES × IMT ATLANTIQUE · 2025 — 2026",
+          title: "ANTIBROUILLAGE ADAPTATIF SPATIAL",
+          desc: "Implémentation et évaluation d'un algorithme LCMV pour le rejet adaptatif de brouillage sur un radar automobile millimétrique. Adaptation sur données expérimentales en présence de brouillage.",
+          tags: ["RADAR", "TRAITEMENT DU SIGNAL", "BEAMFORMING", "PYTHON", "MATLAB"],
+          soon: false,
+        },
+        {
+          icon: "brain",
+          color: "cyan" as const,
+          soon: true,
+          meta: "POLITECHNIKA GDAŃSKA · 2026",
+          title: "CLASSIFICATION DE DOCUMENTS MÉTIER",
+          desc: "Pipeline NLP local de classification par embeddings et règles métier. Centralisation de données issues de sources hétérogènes, exposé via API FastAPI.",
+          tags: ["PYTHON", "NLP", "EMBEDDINGS", "FASTAPI"],
+        },
+        {
+          icon: "eye",
+          color: "cyan" as const,
+          soon: true,
+          meta: "IMT ATLANTIQUE · 2025 — 2026",
+          title: "IA EXPLICABLE — FAUSSES INFORMATIONS",
+          desc: "Pipeline NLP combinant classification et interprétabilité, avec reconstruction textuelle d'une version corrigée.",
+          tags: ["PYTHON", "PYTORCH", "TRANSFORMERS", "INTERPRÉTABILITÉ"],
+        },
+        {
+          icon: "wave",
+          color: "orange" as const,
+          soon: true,
+          meta: "IMT ATLANTIQUE · 2024 — 2025",
+          title: "MESURE D'IRRADIANCE SOLAIRE",
+          desc: "Montage expérimental d'un capteur d'irradiance avec acquisition par Arduino et propagation d'incertitudes par Monte-Carlo.",
+          tags: ["CAPTEURS", "ARDUINO", "MONTE-CARLO", "INCERTITUDES"],
+        },
+      ],
+    },
+    parcours: {
+      eyebrow: "— PARCOURS",
+      h2a: "DE LA PRÉPA",
+      h2b: "AU TERRAIN",
+      xpTitle: "EXPÉRIENCE",
+      xp: [
+        {
+          date: "AVR — MAI 2025",
+          org: "Veolia Eau",
+          role: "Stage opérateur — station d'épuration",
+          desc: "Participation aux opérations de traitement des eaux usées.",
+        },
+        {
+          date: "MAR — AVR 2020",
+          org: "StarNav",
+          role: "Stage d'observation",
+          desc: "Découverte de systèmes de navigation astro-inertielle et de solutions de réglage d'arme sans tir.",
+        },
+      ],
+      eduTitle: "FORMATION",
+      edu: [
+        { name: "IMT Atlantique", desc: "École d'ingénieur généraliste", meta: "BREST · 2024 — 2027" },
+        { name: "Politechnika Gdańska", desc: "Échange académique", meta: "GDAŃSK · 2026" },
+        { name: "Lycée Pierre-Corneille", desc: "Classe prépa PC*", meta: "ROUEN · 2022 — 2024" },
+        { name: "Dual Diploma Academica", desc: "Bac américain (distanciel)", meta: "FLORIDE · 2019 — 2022" },
+        { name: "Lycée Jeanne d'Arc", desc: "Bac général (Maths + PC)", meta: "CAEN · 2019 — 2022" },
+      ],
+    },
+    extra: {
+      eyebrow: "— HORS ÉCOLE",
+      h2a: "ENGAGEMENTS",
+      h2b: "& TERRAIN",
+      engTitle: "ENGAGEMENTS",
+      eng: [
+        {
+          date: "2025-26",
+          title: "BDE — Pôle intégration · IMT Atlantique",
+          desc: "Gestion budgétaire et logistique de la période d'intégration.",
+        },
+        {
+          date: "2022-PRÉSENT",
+          title: "Chef scout · Scouts de Caen",
+          desc: "Encadrement de jeunes de 8 à 18 ans, gestion logistique complète.",
+        },
+      ],
+      hobbiesTitle: "LOISIRS",
+      hobbies: ["Tennis", "Volleyball", "Piano", "Scoutisme"],
+      langTitle: "LANGUES",
+      langs: [
+        "Anglais C1 (Cambridge First, IELTS 8)",
+        "Allemand B2.1",
+        "Français langue maternelle",
+      ],
+    },
+    final: {
+      eyebrow: "— READY WHEN YOU ARE",
+      h2a: "REJOIGNEZ",
+      h2b: "LE PROJET",
+      desc: "Stage de césure 6 mois entre juillet et septembre 2026. Défense, aérospatial, radar / RF, guerre électronique, IA appliquée. Région Paris, habilitation Confidentiel Défense envisageable.",
+      cta: "ME CONTACTER",
+    },
+    ui: {
+      detailsSoon: "DÉTAILS À VENIR",
+      footer: "© 2026 PIERRE-ANTOINE ANDRIÈS · BUILT WITH CLAUDE · ORIGINAL DESIGN",
+    },
+  },
+  en: {
+    nav: {
+      home: "HOME",
+      projects: "PROJECTS",
+      about: "ABOUT",
+      parcours: "PATH",
+      contact: "CONTACT",
+      cv: "MY CV",
+    },
+    hero: {
+      badge: "ENGINEERING STUDENT · IMT ATLANTIQUE",
+      h1a: "SIGNAL,",
+      h1b: "TELECOM & AI",
+      sub: [
+        "Six-month gap-year ",
+        "internship",
+        ", starting ",
+        "July 2026",
+        ". Defense, aerospace, radar / RF / applied AI.",
+      ],
+      cta1: "SEE PROJECTS",
+      cta2: "EXPLORE",
+      stat1l: "4 PROJECTS",
+      stat1s: "SIGNAL · AI · INSTRUMENTATION",
+      stat2l: "1× THALES",
+      stat2s: "INDUSTRIAL COLLABORATION",
+      stat3l: "FR · EN C1 · DE B2",
+      stat3s: "CAMBRIDGE FIRST · IELTS 8",
+    },
+    about: {
+      eyebrow: "— ABOUT",
+      h2a: "MAKING SIGNAL",
+      h2b: "ACCESSIBLE",
+      desc: "Engineering student at IMT Atlantique, specializing in telecommunications, signal processing, data science and AI. Drawn to communication systems and demanding technical environments, I'm looking for a 6-month gap-year internship from July 2026, ideally in aerospace or defense.",
+      stats: [
+        { n: "4", l: "TECHNICAL PROJECTS", c: "cyan" as const },
+        { n: "3", l: "CORE LANGUAGES", c: "cyan" as const },
+        { n: "1×", l: "THALES × IMT ATLANTIQUE", c: "orange" as const },
+      ],
+    },
+    projects: {
+      eyebrow: "— PROJECTS",
+      h2a: "FOUR FIELDS,",
+      h2b: "ONE LOGIC",
+      desc: "Signal, data, measurement. From MATLAB simulation to local NLP pipeline.",
+      tops: [
+        { n: "THALES × IMT", l: "INDUSTRIAL COLLAB 2025-26", c: "cyan" as const },
+        { n: "LCMV", l: "mmW ANTI-JAM ALGORITHM", c: "cyan" as const },
+        { n: "4", l: "TECHNICAL DOMAINS", c: "orange" as const },
+      ],
+      cards: [
+        {
+          icon: "radar",
+          color: "cyan" as const,
+          meta: "THALES × IMT ATLANTIQUE · 2025 — 2026",
+          title: "ADAPTIVE SPATIAL ANTI-JAM",
+          desc: "LCMV beamforming for adaptive jammer rejection on millimetric automotive radar. Tested on experimental data with active jamming.",
+          tags: ["RADAR", "SIGNAL PROCESSING", "BEAMFORMING", "PYTHON", "MATLAB"],
+          soon: false,
+        },
+        {
+          icon: "brain",
+          color: "cyan" as const,
+          soon: true,
+          meta: "POLITECHNIKA GDAŃSKA · 2026",
+          title: "BUSINESS DOC CLASSIFICATION",
+          desc: "Local NLP pipeline using embeddings and rule-based logic. Centralizing heterogeneous data sources, exposed through a FastAPI service.",
+          tags: ["PYTHON", "NLP", "EMBEDDINGS", "FASTAPI"],
+        },
+        {
+          icon: "eye",
+          color: "cyan" as const,
+          soon: true,
+          meta: "IMT ATLANTIQUE · 2025 — 2026",
+          title: "EXPLAINABLE AI — MISINFORMATION",
+          desc: "NLP pipeline combining classification and interpretability, with text-level reconstruction of a corrected version.",
+          tags: ["PYTHON", "PYTORCH", "TRANSFORMERS", "INTERPRETABILITY"],
+        },
+        {
+          icon: "wave",
+          color: "orange" as const,
+          soon: true,
+          meta: "IMT ATLANTIQUE · 2024 — 2025",
+          title: "SOLAR IRRADIANCE MEASUREMENT",
+          desc: "Custom irradiance sensor rig with Arduino acquisition and Monte-Carlo uncertainty propagation.",
+          tags: ["SENSORS", "ARDUINO", "MONTE-CARLO", "UNCERTAINTY"],
+        },
+      ],
+    },
+    parcours: {
+      eyebrow: "— PATH",
+      h2a: "FROM PREP-CLASS",
+      h2b: "TO THE FIELD",
+      xpTitle: "EXPERIENCE",
+      xp: [
+        {
+          date: "APR — MAY 2025",
+          org: "Veolia Water",
+          role: "Operator intern — wastewater plant",
+          desc: "Hands-on participation in wastewater treatment operations.",
+        },
+        {
+          date: "MAR — APR 2020",
+          org: "StarNav",
+          role: "Observation internship",
+          desc: "Exposure to astro-inertial navigation and live-fire-free weapon calibration solutions.",
+        },
+      ],
+      eduTitle: "EDUCATION",
+      edu: [
+        { name: "IMT Atlantique", desc: "Generalist engineering school", meta: "BREST · 2024 — 2027" },
+        { name: "Politechnika Gdańska", desc: "Academic exchange", meta: "GDAŃSK · 2026" },
+        { name: "Lycée Pierre-Corneille", desc: "PC* prep class (math/physics)", meta: "ROUEN · 2022 — 2024" },
+        { name: "Dual Diploma Academica", desc: "US high-school diploma (remote)", meta: "FLORIDA · 2019 — 2022" },
+        { name: "Lycée Jeanne d'Arc", desc: "Baccalauréat (Math + Physics)", meta: "CAEN · 2019 — 2022" },
+      ],
+    },
+    extra: {
+      eyebrow: "— OUTSIDE SCHOOL",
+      h2a: "COMMITMENTS",
+      h2b: "& FIELDWORK",
+      engTitle: "COMMITMENTS",
+      eng: [
+        {
+          date: "2025-26",
+          title: "BDE — Onboarding lead · IMT Atlantique",
+          desc: "Budget and logistics for the freshman onboarding period.",
+        },
+        {
+          date: "2022-PRESENT",
+          title: "Scout leader · Scouts de Caen",
+          desc: "Leading youth (8–18 yrs), full logistics ownership.",
+        },
+      ],
+      hobbiesTitle: "HOBBIES",
+      hobbies: ["Tennis", "Volleyball", "Piano", "Scouting"],
+      langTitle: "LANGUAGES",
+      langs: ["English C1 (Cambridge First, IELTS 8)", "German B2.1", "French native"],
+    },
+    final: {
+      eyebrow: "— READY WHEN YOU ARE",
+      h2a: "JOIN",
+      h2b: "THE PROJECT",
+      desc: "6-month gap-year internship between July and September 2026. Defense, aerospace, radar / RF, electronic warfare, applied AI. Paris area, French defense clearance pursuable.",
+      cta: "GET IN TOUCH",
+    },
+    ui: {
+      detailsSoon: "DETAILS COMING",
+      footer: "© 2026 PIERRE-ANTOINE ANDRIÈS · BUILT WITH CLAUDE · ORIGINAL DESIGN",
+    },
+  },
+} as const;
+
+export type CopyShape = typeof COPY.fr;
