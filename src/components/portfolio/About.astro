@@ -8,12 +8,19 @@ const techs = [
   "PYTHON",
   "MATLAB",
   "PYTORCH",
+  "ROBERTA",
+  "BART",
+  "T5",
+  "LIME",
   "NLP",
   "FASTAPI",
   "SQL",
   "GIT",
   "HADOOP",
   "SPARK",
+  "MESHROOM",
+  "POTREE",
+  "REACT",
   "ARDUINO",
   "LATEX",
   "LINUX",
@@ -28,33 +35,23 @@ const techs = [
       </div>
 
       <h2 class="display h2-pf" style="text-wrap:balance">
+        {/* Tricolore lettré : Q bleu · U blanc (avec glow pour la lisibilité) · I rouge. Marche aussi pour W/H/O en EN. */}
         <span style="display:block">
-          <span class="i18n-fr">{fr.h2a}</span><span class="i18n-en">{en.h2a}</span>
+          <span class="i18n-fr">
+            <span style="color:#0055A4">Q</span><span style="color:#ffffff;text-shadow:0 0 14px rgba(255,255,255,0.45)">U</span><span style="color:#EF4135">I</span>
+          </span>
+          <span class="i18n-en">
+            <span style="color:#0055A4">W</span><span style="color:#ffffff;text-shadow:0 0 14px rgba(255,255,255,0.45)">H</span><span style="color:#EF4135">O</span>
+          </span>
         </span>
         <span class="text-grad-cyan" style="display:block">
           <span class="i18n-fr">{fr.h2b}</span><span class="i18n-en">{en.h2b}</span>
         </span>
       </h2>
 
-      <p style="margin-top:24px;color:var(--text2);font-size:17px;line-height:1.6;max-width:760px">
+      <p style="margin-top:24px;color:var(--text2);font-size:17px;line-height:1.6;max-width:920px">
         <span class="i18n-fr">{fr.desc}</span><span class="i18n-en">{en.desc}</span>
       </p>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:36px">
-        {
-          fr.stats.map((s, i) => (
-            <div
-              class="stat"
-              style={`color: ${s.c === "cyan" ? "var(--cyan)" : "var(--orange)"}`}
-            >
-              <div class="num">{s.n}</div>
-              <div class="lbl">
-                <span class="i18n-fr">{s.l}</span><span class="i18n-en">{en.stats[i].l}</span>
-              </div>
-            </div>
-          ))
-        }
-      </div>
     </div>
 
     <div

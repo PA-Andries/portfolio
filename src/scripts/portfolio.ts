@@ -126,12 +126,18 @@ function initSectionIndicator() {
 
 function initCardEffects() {
   const cards = document.querySelectorAll<HTMLElement>(".pcard");
-  cards.forEach((card) => card.classList.add("tilt", "glow"));
+  // .glow is safe at all times (uses ::after pseudo-element, no transform conflict).
+  // .tilt sets transform on the .pcard itself which fights .reveal's translateY(40px) —
+  // only enable it once the card has been revealed (.in class) so the entry animation isn't clobbered.
+  cards.forEach((card) => card.classList.add("glow"));
 
   document.addEventListener(
     "mousemove",
     (e) => {
       cards.forEach((card) => {
+        if (!card.classList.contains("tilt") && card.classList.contains("in")) {
+          card.classList.add("tilt");
+        }
         const r = card.getBoundingClientRect();
         const inside =
           e.clientX >= r.left &&
@@ -160,12 +166,19 @@ function initCardEffects() {
 // ============== SCROLL REVEAL ==============
 
 function initScrollReveal() {
+  // Reveal animation lives in CSS (`@keyframes pa-reveal` on .glass, .pcard).
+  // JS only marks `.in` once an element has scrolled into view, so initCardEffects
+  // can safely enable tilt on .pcard elements after their entry animation.
+  // Use IntersectionObserver (browser-throttled) instead of a scroll listener — much
+  // cheaper and avoids running on every scroll frame.
   const targets = document.querySelectorAll<HTMLElement>(".glass, .pcard");
-  targets.forEach((t) => t.classList.add("reveal"));
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting) e.target.classList.add("in");
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
       });
     },
     { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
@@ -303,12 +316,73 @@ function escapeHTML(s: string): string {
 
 // ============== INIT ==============
 
+function initNavAutoHide() {
+  const nav = document.querySelector<HTMLElement>("[data-nav]");
+  const trigger = document.querySelector<HTMLElement>("[data-nav-trigger]");
+  if (!nav || !trigger) return;
+
+  const TOP_THRESHOLD = 80; // px from top: nav always visible above this scroll
+  const REVEAL_ZONE = 80; // px from top: mouse here reveals nav
+  const HIDE_ZONE = 140; // px from top: mouse beyond here re-hides nav
+
+  let hidden = false;
+  let navHovered = false;
+
+  const showNav = () => {
+    nav.classList.remove("nav-hidden");
+    trigger.classList.remove("visible");
+    hidden = false;
+  };
+  const hideNav = () => {
+    if (window.scrollY < TOP_THRESHOLD) return;
+    if (navHovered) return;
+    nav.classList.add("nav-hidden");
+    trigger.classList.add("visible");
+    hidden = true;
+  };
+
+  const onScroll = () => {
+    if (window.scrollY < TOP_THRESHOLD) {
+      showNav();
+    } else if (!hidden && !navHovered) {
+      hideNav();
+    }
+  };
+
+  const onMouseMove = (e: MouseEvent) => {
+    if (window.scrollY < TOP_THRESHOLD) return;
+    if (e.clientY < REVEAL_ZONE) {
+      if (hidden) showNav();
+    } else if (e.clientY > HIDE_ZONE) {
+      if (!hidden) hideNav();
+    }
+  };
+
+  nav.addEventListener("mouseenter", () => {
+    navHovered = true;
+  });
+  nav.addEventListener("mouseleave", () => {
+    navHovered = false;
+  });
+
+  trigger.addEventListener("click", showNav);
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  document.addEventListener("mousemove", onMouseMove, { passive: true });
+
+  onScroll();
+}
+
+let initialized = false;
 function init() {
+  if (initialized) return; // guard against HMR double-fire
+  initialized = true;
   initLang();
   initParallax();
   initSectionIndicator();
   initCardEffects();
   initScrollReveal();
+  initNavAutoHide();
   initTerminal();
 }
 

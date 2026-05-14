@@ -11,9 +11,13 @@ const ui = COPY.fr.ui;
   <div class="container-pf" style="display:flex;flex-direction:column;align-items:center;gap:32px">
     <div class="glass" style="max-width:640px;width:100%;padding:56px 40px;text-align:center">
       <div
-        style="width:54px;height:54px;border-radius:50%;margin:0 auto 22px;background:radial-gradient(circle at 30% 30%, #1a2540, #050810);box-shadow:0 0 24px rgba(61,224,255,0.3), inset 0 1px 0 rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.1em"
+        style="width:64px;height:64px;border-radius:50%;margin:0 auto 22px;overflow:hidden;box-shadow:0 0 24px rgba(61,224,255,0.3), 0 0 0 1px rgba(255,255,255,0.1)"
       >
-        PA
+        <img
+          src="/avatar.png"
+          alt="Pierre-Antoine Andriès"
+          style="width:100%;height:100%;object-fit:cover;display:block"
+        />
       </div>
 
       <div class="eyebrow">
@@ -45,51 +49,51 @@ const ui = COPY.fr.ui;
       </a>
     </div>
 
-    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
+    <div style="display:flex;flex-wrap:wrap;gap:28px;justify-content:center;margin-top:8px">
       <a
         href="mailto:pierreantoineandries@gmail.com"
         class="mono"
-        style="font-size:10px;color:var(--text2);display:flex;gap:8px;align-items:center"
+        style="font-size:13px;letter-spacing:0.18em;color:var(--text2);display:flex;gap:12px;align-items:center"
       >
-        <Icon name="mail" size={14} />EMAIL
+        <Icon name="mail" size={20} />EMAIL
       </a>
       <a
         href="https://www.linkedin.com/in/pa-andries"
         target="_blank"
         rel="noopener"
         class="mono"
-        style="font-size:10px;color:var(--text2);display:flex;gap:8px;align-items:center"
+        style="font-size:13px;letter-spacing:0.18em;color:var(--text2);display:flex;gap:12px;align-items:center"
       >
-        <Icon name="in" size={14} />LINKEDIN
+        <Icon name="in" size={20} />LINKEDIN
       </a>
       <a
         href="https://github.com/PA-Andries"
         target="_blank"
         rel="noopener"
         class="mono"
-        style="font-size:10px;color:var(--text2);display:flex;gap:8px;align-items:center"
+        style="font-size:13px;letter-spacing:0.18em;color:var(--text2);display:flex;gap:12px;align-items:center"
       >
-        <Icon name="gh" size={14} />GITHUB
+        <Icon name="gh" size={20} />GITHUB
       </a>
       <a
         href="tel:+33769017623"
         class="mono"
-        style="font-size:10px;color:var(--text2);display:flex;gap:8px;align-items:center"
+        style="font-size:13px;letter-spacing:0.16em;color:var(--text2);display:flex;gap:12px;align-items:center"
       >
-        <Icon name="phone" size={14} />+33 7 69 01 76 23
+        <Icon name="phone" size={20} />+33 7 69 01 76 23
       </a>
       <a
         href="/cv/CV-PA-Andries.pdf"
         target="_blank"
         rel="noopener"
         class="mono"
-        style="font-size:10px;color:var(--orange);display:flex;gap:8px;align-items:center"
+        style="font-size:13px;letter-spacing:0.18em;color:var(--orange);display:flex;gap:12px;align-items:center"
       >
-        <Icon name="file" size={14} />CV PDF
+        <Icon name="file" size={20} />CV PDF
       </a>
     </div>
 
-    <div class="mono" style="font-size:9px;color:var(--dim);text-align:center;margin-top:8px">
+    <div class="mono" style="font-size:11px;letter-spacing:0.18em;color:var(--text2);text-align:center;margin-top:16px">
       <span class="i18n-fr">{ui.footer}</span><span class="i18n-en">{COPY.en.ui.footer}</span>
     </div>
   </div>

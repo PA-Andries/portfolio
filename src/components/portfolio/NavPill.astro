@@ -6,14 +6,15 @@ const fr = COPY.fr.nav;
 const en = COPY.en.nav;
 ---
 
-<nav class="nav-pill">
-  <a href="#home" class="logo" aria-label="Home"><span>PA</span></a>
+<nav class="nav-pill" data-nav>
+  <a href="#home" class="logo" aria-label="Pierre-Antoine Andriès — home"><img src="/avatar.png" alt="Pierre-Antoine Andriès" /></a>
 
   <div class="links">
     <a href="#home"><span class="i18n-fr">{fr.home}</span><span class="i18n-en">{en.home}</span></a>
     <a href="#about"><span class="i18n-fr">{fr.about}</span><span class="i18n-en">{en.about}</span></a>
     <a href="#projets"><span class="i18n-fr">{fr.projects}</span><span class="i18n-en">{en.projects}</span></a>
     <a href="#parcours"><span class="i18n-fr">{fr.parcours}</span><span class="i18n-en">{en.parcours}</span></a>
+    <a href="#extra"><span class="i18n-fr">{fr.extra}</span><span class="i18n-en">{en.extra}</span></a>
     <a href="#contact"><span class="i18n-fr">{fr.contact}</span><span class="i18n-en">{en.contact}</span></a>
   </div>
 
@@ -33,3 +34,7 @@ const en = COPY.en.nav;
     <Icon name="arrowD" size={14} />
   </a>
 </nav>
+
+<button class="nav-trigger" data-nav-trigger aria-label="Afficher le menu">
+  <Icon name="arrowD" size={16} />
+</button>

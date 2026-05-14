@@ -26,55 +26,70 @@ const en = COPY.en.projects;
         <span class="i18n-fr">{fr.desc}</span><span class="i18n-en">{en.desc}</span>
       </p>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:32px">
-        {
-          fr.tops.map((s, i) => (
-            <div
-              class="stat"
-              style={`color: ${s.c === "cyan" ? "var(--cyan)" : "var(--orange)"}`}
-            >
-              <div class="num" style={`font-size: ${s.n.length > 5 ? 28 : 40}px`}>
-                <span class="i18n-fr">{s.n}</span><span class="i18n-en">{en.tops[i].n}</span>
-              </div>
-              <div class="lbl">
-                <span class="i18n-fr">{s.l}</span><span class="i18n-en">{en.tops[i].l}</span>
-              </div>
-            </div>
-          ))
-        }
+      {/* Featured project — Thalès × IMT Antibrouillage radar mmW. Full-width hero card. */}
+      <div class="pcard pcard-featured" style="margin-top:36px;padding:40px;border:1px solid rgba(61,224,255,0.25);background:linear-gradient(135deg, rgba(15,30,55,0.7), rgba(10,14,26,0.6))">
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <div class="ico">
+            <Icon name={fr.cards[0].icon as any} />
+          </div>
+          <div class="mono" style="font-size:12px;letter-spacing:0.22em">
+            <span style="color:var(--orange);letter-spacing:0.28em" class="i18n-fr">PROJET PHARE</span><span style="color:var(--orange);letter-spacing:0.28em" class="i18n-en">FEATURED PROJECT</span>
+            <span style="color:var(--dim);margin:0 10px">·</span>
+            <span style="color:var(--text2)">{fr.cards[0].meta}</span>
+          </div>
+        </div>
+        <h3 class="display" style="font-size:clamp(28px, 4vw, 40px);margin-top:20px;line-height:1.02;text-wrap:balance">
+          <span class="i18n-fr">{fr.cards[0].title}</span><span class="i18n-en">{en.cards[0].title}</span>
+        </h3>
+        <p style="margin-top:18px;color:var(--text2);font-size:16px;line-height:1.6;max-width:780px">
+          <span class="i18n-fr">{fr.cards[0].desc}</span><span class="i18n-en">{en.cards[0].desc}</span>
+        </p>
+        <div style="margin-top:20px">
+          <span class="i18n-fr">
+            {fr.cards[0].tags.map((tg) => <span class="chip">{tg}</span>)}
+          </span>
+          <span class="i18n-en">
+            {en.cards[0].tags.map((tg) => <span class="chip">{tg}</span>)}
+          </span>
+        </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:32px">
+      {/* Remaining projects in 2-column grid */}
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:18px">
         {
-          fr.cards.map((c, i) => (
-            <div class={`pcard ${c.color === "orange" ? "orange" : ""}`}>
-              <div style="display:flex;align-items:center;gap:14px">
-                <div class="ico">
-                  <Icon name={c.icon as any} />
+          fr.cards.slice(1).map((c, idx) => {
+            const i = idx + 1;
+            const isLive = "live" in c && c.live;
+            return (
+              <div class={`pcard ${c.color === "orange" ? "orange" : ""}`}>
+                {isLive && (
+                  <span class="badge-live">
+                    <span class="i18n-fr">{COPY.fr.ui.live}</span><span class="i18n-en">{COPY.en.ui.live}</span>
+                  </span>
+                )}
+                <div style={`display:flex;align-items:center;gap:14px${isLive ? ";padding-right:148px" : ""}`}>
+                  <div class="ico">
+                    <Icon name={c.icon as any} />
+                  </div>
+                  <div class="mono" style="color:var(--text2);font-size:11px;letter-spacing:0.16em">{c.meta}</div>
                 </div>
-                <div class="mono" style="color:var(--dim);font-size:9px">{c.meta}</div>
+                <h3 class="display" style="font-size:24px;margin-top:18px;line-height:1.05;text-wrap:balance">
+                  <span class="i18n-fr">{c.title}</span><span class="i18n-en">{en.cards[i].title}</span>
+                </h3>
+                <p style="margin-top:14px;color:var(--text2);font-size:14px;line-height:1.55">
+                  <span class="i18n-fr">{c.desc}</span><span class="i18n-en">{en.cards[i].desc}</span>
+                </p>
+                <div style="margin-top:16px">
+                  <span class="i18n-fr">
+                    {c.tags.map((tg) => <span class="chip">{tg}</span>)}
+                  </span>
+                  <span class="i18n-en">
+                    {en.cards[i].tags.map((tg) => <span class="chip">{tg}</span>)}
+                  </span>
+                </div>
               </div>
-              {c.soon && (
-                <span class="badge-soon">
-                  <span class="i18n-fr">{COPY.fr.ui.detailsSoon}</span><span class="i18n-en">{COPY.en.ui.detailsSoon}</span>
-                </span>
-              )}
-              <h3 class="display" style="font-size:24px;margin-top:18px;line-height:1.05;text-wrap:balance">
-                <span class="i18n-fr">{c.title}</span><span class="i18n-en">{en.cards[i].title}</span>
-              </h3>
-              <p style="margin-top:14px;color:var(--text2);font-size:14px;line-height:1.55">
-                <span class="i18n-fr">{c.desc}</span><span class="i18n-en">{en.cards[i].desc}</span>
-              </p>
-              <div style="margin-top:16px">
-                <span class="i18n-fr">
-                  {c.tags.map((tg) => <span class="chip">{tg}</span>)}
-                </span>
-                <span class="i18n-en">
-                  {en.cards[i].tags.map((tg) => <span class="chip">{tg}</span>)}
-                </span>
-              </div>
-            </div>
-          ))
+            );
+          })
         }
       </div>
     </div>
