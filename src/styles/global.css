@@ -453,16 +453,16 @@ a {
 .section {
   position: relative;
   z-index: 2;
-  padding: 200px 24px;
+  padding: 100px 24px 140px;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* content at top, not centered vertically */
   justify-content: center;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 120px 16px;
+    padding: 80px 16px 100px;
     min-height: auto;
   }
 }
@@ -922,7 +922,9 @@ a {
 }
 
 section {
-  scroll-margin-top: 100px;
+  /* Buffer below the fixed navbar (nav-pill is ~62px tall, sits at top: 20px → ends at ~82px).
+     90px puts the section top a hair below the navbar after clicking a nav link. */
+  scroll-margin-top: 90px;
 }
 
 .eyebrow {
