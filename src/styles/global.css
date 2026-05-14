@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
-@import "@fontsource/space-grotesk/500.css";
+/* Trimmed to the 4 weights actually rendered on the site.
+   Was 7 files (Inter 400/500/600 + Space Grotesk 500/700 + JetBrains Mono 400/500). */
 @import "@fontsource/space-grotesk/700.css";
 @import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/jetbrains-mono/400.css";
-@import "@fontsource/jetbrains-mono/500.css";
 
 :root {
   --bg: #0a0e1a;
@@ -475,6 +474,19 @@ a {
 
 .h1-pf {
   font-size: clamp(36px, 6vw, 80px);
+}
+
+/* Hero subtitle (SIGNAL · TÉLÉCOMS · IA): single line on desktop,
+   wraps naturally below 720px so it doesn't overflow on mobile. */
+.hero-subtitle {
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .hero-subtitle {
+    white-space: normal;
+    letter-spacing: 0.01em;
+  }
 }
 
 .h2-pf {

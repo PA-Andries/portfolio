@@ -38,7 +38,7 @@ export const COPY = {
         ". Défense, aérospatial, radar / RF / IA appliquée.",
       ],
       cta1: "VOIR LES PROJETS",
-      cta2: "EXPLORER",
+      cta2: "À PROPOS",
       stat1l: "MAINTENANT",
       stat1s: "ERASMUS GDAŃSK · DATA SCIENCE",
       stat2l: "PROCHAINEMENT",
@@ -165,7 +165,7 @@ export const COPY = {
       eng: [
         {
           date: "2025-26",
-          title: "BDE — Trésorier pôle intégration · IMT Atlantique",
+          title: "BDE — Trésorier pôle intégration",
           desc: "Mandat associatif d'1 an. Co-pilotage de l'intégration des nouveaux IMT : équipe de 10, budget et événementiel.",
         },
         {
@@ -218,7 +218,7 @@ export const COPY = {
         ". Defense, aerospace, radar / RF / applied AI.",
       ],
       cta1: "SEE PROJECTS",
-      cta2: "EXPLORE",
+      cta2: "ABOUT",
       stat1l: "NOW",
       stat1s: "ERASMUS GDAŃSK · DATA SCIENCE",
       stat2l: "NEXT",
@@ -345,7 +345,7 @@ export const COPY = {
       eng: [
         {
           date: "2025-26",
-          title: "BDE — Onboarding pole treasurer · IMT Atlantique",
+          title: "BDE — Onboarding pole treasurer",
           desc: "One-year community mandate. Co-leading the freshman onboarding: team of 10, budget and event ownership.",
         },
         {
