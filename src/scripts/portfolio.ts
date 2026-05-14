@@ -341,11 +341,24 @@ function initNavAutoHide() {
     hidden = true;
   };
 
+  let scrollHideTimer: number | null = null;
+  const clearScrollHideTimer = () => {
+    if (scrollHideTimer !== null) {
+      clearTimeout(scrollHideTimer);
+      scrollHideTimer = null;
+    }
+  };
+
   const onScroll = () => {
     if (window.scrollY < TOP_THRESHOLD) {
+      clearScrollHideTimer();
       showNav();
-    } else if (!hidden && !navHovered) {
-      hideNav();
+    } else if (!hidden && !navHovered && scrollHideTimer === null) {
+      // Small delay so the slide-up animation is visible AFTER the scroll motion settles.
+      scrollHideTimer = window.setTimeout(() => {
+        scrollHideTimer = null;
+        hideNav();
+      }, 200);
     }
   };
 
