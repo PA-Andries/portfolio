@@ -341,25 +341,30 @@ function initNavAutoHide() {
     hidden = true;
   };
 
-  let scrollHideTimer: number | null = null;
-  const clearScrollHideTimer = () => {
-    if (scrollHideTimer !== null) {
-      clearTimeout(scrollHideTimer);
-      scrollHideTimer = null;
+  let scrollEndTimer: number | null = null;
+  const clearScrollEndTimer = () => {
+    if (scrollEndTimer !== null) {
+      clearTimeout(scrollEndTimer);
+      scrollEndTimer = null;
     }
   };
 
+  // Debounced hide: each scroll event RESETS the timer. The slide-up only fires
+  // ~220ms AFTER the user has stopped scrolling — by then the page is calm and
+  // the transition (0.55s) is clearly visible instead of getting lost in scroll motion.
   const onScroll = () => {
+    clearScrollEndTimer();
+
     if (window.scrollY < TOP_THRESHOLD) {
-      clearScrollHideTimer();
       showNav();
-    } else if (!hidden && !navHovered && scrollHideTimer === null) {
-      // Small delay so the slide-up animation is visible AFTER the scroll motion settles.
-      scrollHideTimer = window.setTimeout(() => {
-        scrollHideTimer = null;
-        hideNav();
-      }, 200);
+      return;
     }
+    if (hidden || navHovered) return;
+
+    scrollEndTimer = window.setTimeout(() => {
+      scrollEndTimer = null;
+      hideNav();
+    }, 220);
   };
 
   const onMouseMove = (e: MouseEvent) => {
