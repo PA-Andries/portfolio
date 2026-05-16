@@ -44,37 +44,9 @@ function initLang() {
   });
 }
 
-// ============== BACKDROP PARALLAX ==============
-
-function initParallax() {
-  const slow = document.querySelector<HTMLElement>("[data-bd-layer='slow']");
-  const med = document.querySelector<HTMLElement>("[data-bd-layer='med']");
-  const grid = document.querySelector<HTMLElement>("[data-bd-layer='grid']");
-  const radar = document.querySelector<HTMLElement>("[data-bd-layer='radar']");
-  if (!slow && !med && !grid && !radar) return;
-
-  let ticking = false;
-  const update = () => {
-    const y = window.scrollY;
-    if (slow) slow.style.transform = `translateY(${y * 0.15}px)`;
-    if (med) med.style.transform = `translateY(${y * 0.3}px)`;
-    if (grid) grid.style.transform = `perspective(800px) rotateX(70deg) translateY(${y * 0.2}px)`;
-    if (radar) radar.style.transform = `translate(-50%,-50%) translateY(${y * 0.1}px)`;
-    ticking = false;
-  };
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!ticking) {
-        requestAnimationFrame(update);
-        ticking = true;
-      }
-    },
-    { passive: true }
-  );
-  update();
-}
+// Backdrop parallax was removed when the CSS-drawn backdrop (stars/grid-floor/radar-sweep)
+// was replaced with a WebGL fly-through scene. Camera motion is now driven from
+// src/scripts/backdrop.ts which listens to scroll directly.
 
 // ============== SECTION INDICATOR ==============
 
@@ -89,6 +61,7 @@ function initSectionIndicator() {
     });
   });
 
+  let lastActiveIdx = -1;
   const updateActive = () => {
     let bestIdx = 0;
     let bestDist = Infinity;
@@ -103,6 +76,12 @@ function initSectionIndicator() {
       }
     });
     buttons.forEach((btn, i) => btn.classList.toggle("active", i === bestIdx));
+    if (bestIdx !== lastActiveIdx) {
+      lastActiveIdx = bestIdx;
+      window.dispatchEvent(
+        new CustomEvent("pa:section-change", { detail: { section: SECTIONS[bestIdx] } })
+      );
+    }
   };
 
   let ticking = false;
@@ -396,7 +375,6 @@ function init() {
   if (initialized) return; // guard against HMR double-fire
   initialized = true;
   initLang();
-  initParallax();
   initSectionIndicator();
   initCardEffects();
   initScrollReveal();

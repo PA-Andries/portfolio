@@ -30,3 +30,6 @@ HANDOFF.md
 
 # personal reference material — not for the public repo
 screenshots linkedin/
+
+# local Claude Code config (plans, launch.json, etc.)
+.claude/

@@ -1,14 +1,30 @@
 ---
-// AERO backdrop — single variant ported from Claude Design.
-// Parallax driven by portfolio.ts which sets CSS variables based on scrollY.
+// WebGL backdrop — scroll-driven 3D fly-through of 6 themed islands.
+// Replaces the previous CSS-drawn aero backdrop (stars/grid-floor/radar-sweep).
+// Logic lives in src/scripts/backdrop.ts (vanilla Three.js, no React dependency).
+// CSS-only fallback (.backdrop-fallback) shows island-1 statically when WebGL or motion is unavailable.
 ---
 
 <div class="backdrop-stage" aria-hidden="true" data-backdrop>
-  <div class="backdrop-layer bd-aero" style="opacity: 1;">
-    <div class="stars" data-bd-layer="slow"></div>
-    <div class="grid-floor" data-bd-layer="grid"></div>
-    <div class="radar-sweep" data-bd-layer="radar"></div>
-    <div class="horizon" data-bd-layer="med"></div>
-  </div>
+  <canvas class="backdrop-canvas" data-backdrop-canvas></canvas>
+  <div class="backdrop-fallback"></div>
   <div class="backdrop-vignette"></div>
+  <div class="backdrop-labels" data-backdrop-labels>
+    <div class="backdrop-label" data-label-section="about">
+      <span class="backdrop-label-name">CAEN</span>
+      <span class="backdrop-label-sub">ORIGINES · NORMANDIE</span>
+    </div>
+    <div class="backdrop-label" data-label-section="projets">
+      <span class="backdrop-label-name">BREST</span>
+      <span class="backdrop-label-sub">IMT ATLANTIQUE</span>
+    </div>
+    <div class="backdrop-label" data-label-section="parcours">
+      <span class="backdrop-label-name">GDAŃSK</span>
+      <span class="backdrop-label-sub">ERASMUS · POLAND</span>
+    </div>
+  </div>
 </div>
+
+<script>
+  import "../../scripts/backdrop";
+</script>
