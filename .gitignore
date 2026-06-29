@@ -33,3 +33,5 @@ screenshots linkedin/
 
 # local Claude Code config (plans, launch.json, etc.)
 .claude/
+
+.vercel
