@@ -59,7 +59,8 @@ const en = COPY.en.projects;
         {
           fr.cards.slice(1).map((c, idx) => {
             const i = idx + 1;
-            const isLive = "live" in c && c.live;
+            // Aucun projet n'est "en cours" aujourd'hui — le badge reste câblé pour les prochains.
+            const isLive = (c as { live?: boolean }).live === true;
             return (
               <div class={`pcard ${c.color === "orange" ? "orange" : ""}`}>
                 {isLive && (

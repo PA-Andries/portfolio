@@ -1,43 +1,49 @@
-# Astro Starter Kit: Minimal
+# portfolio — Pierre-Antoine Andriès
+
+Portfolio personnel : élève ingénieur IMT Atlantique (signal, télécoms, IA).
+Site statique bilingue FR/EN, une seule page, avec un globe WebGL en fond.
+
+**En ligne :** https://portfolio.pierrotandries.workers.dev
+
+## Stack
+
+Astro 6 · Tailwind CSS v4 (`@tailwindcss/vite`) · MDX · Three.js · TypeScript strict.
+Déploiement Cloudflare depuis `main`.
+
+## Commandes
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # build vers ./dist/
+npm run preview  # prévisualise le build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+public/
+  cv/CV-PA-Andries.pdf     CV téléchargeable (nav + bloc contact)
+  backdrop/                textures du globe
+src/
+  data/copy.ts             TOUT le texte FR/EN du site
+  data/projects.ts         données projets (futures case studies)
+  components/portfolio/    Hero, About, Projects, Parcours, Extra, FinalCTA…
+  scripts/portfolio.ts     nav, i18n, terminal easter-egg
+  scripts/backdrop.ts      globe WebGL (Three.js)
+  styles/global.css        design system
+  pages/index.astro        assemblage de la page
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Mettre à jour le contenu
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Presque tout se passe dans [`src/data/copy.ts`](src/data/copy.ts) : les objets `fr` et `en`
+ont exactement la même forme, les composants indexent les deux tableaux en parallèle —
+si tu ajoutes une entrée d'un côté, ajoute-la au même index de l'autre.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Penser aussi à resynchroniser :
+- le CV dans `public/cv/CV-PA-Andries.pdf`
+- les réponses du terminal dans `src/scripts/portfolio.ts` (`whoami`, `skills`, `projects`)
+- la meta description dans `src/layouts/BaseLayout.astro`
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Voir [STATUS.md](STATUS.md) pour l'état d'avancement.

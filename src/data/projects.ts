@@ -93,15 +93,35 @@ export const projects: Project[] = [
     status: "stub",
   },
   {
-    slug: "web-pending",
-    title: "Sites web & side projects",
+    slug: "lexflow",
+    title: "LexFlow — dictée vocale juridique 100 % locale",
+    context: "Projet livré à un cabinet d'avocats",
+    period: "2026",
+    category: "ia",
+    summary:
+      "Dictée vocale sans aucun envoi de données : transcription Whisper sur GPU, vocabulaire juridique, reformulation par LLM local sous garde-fous.",
+    bullets: [
+      "Transcription Whisper large-v3-turbo sur CUDA, amorce de vocabulaire juridique.",
+      "Correction typographique française et commandes de mise en forme dictées.",
+      "Reformulation par LLM local avec garde-fous anti-hallucination (~0,9 s).",
+    ],
+    tags: ["Python", "Whisper", "CUDA", "LLM local", "NLP"],
+    status: "ready",
+  },
+  {
+    slug: "web-zero-dep",
+    title: "Sites sur mesure — WebGL & zéro dépendance",
     context: "Personnel / freelance",
-    period: "À venir",
+    period: "2026",
     category: "web",
     summary:
-      "Section en attente de complétion — projets web personnels et freelance à intégrer.",
-    bullets: [],
-    tags: [],
-    status: "pending",
+      "Sites vitrines premium écrits à la main, sans framework ni build : moteur WebGL/GLSL et animations en JavaScript natif.",
+    bullets: [
+      "LIMARE × EPOXY 27 — shaders de raymarching, moteur d'animation vanilla JS.",
+      "Concept de refonte corporate bilingue FR/EN sur 19 pages.",
+      "Site de cabinet d'avocats sous Next.js 15 (App Router, TypeScript).",
+    ],
+    tags: ["WebGL", "GLSL", "JavaScript", "Next.js", "UI/UX"],
+    status: "stub",
   },
 ];

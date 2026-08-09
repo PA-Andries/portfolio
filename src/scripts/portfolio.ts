@@ -223,16 +223,22 @@ function initTerminal() {
       ]);
     } else if (cmd === "whoami") {
       out(
-        "pierre-antoine andriès · imt atlantique · signal/telecom/ai · seeking 6mo gap-year internship from july 2026"
+        "pierre-antoine andriès · imt atlantique · signal/telecom/ai · counter-uas radar @ stryx ai 2026-27 · seeking 6mo gap-year internship from feb 2027"
       );
     } else if (cmd === "skills") {
-      out("python · matlab · pytorch · nlp · fastapi · sql · git · arduino · linux · latex");
+      out(
+        "python · matlab · pytorch · whisper · cuda · nlp · fastapi · sql · spark · git · webgl · arduino · linux · latex"
+      );
     } else if (cmd === "projects") {
       out([
         "  [01] adaptive-spatial-anti-jam   thales x imt   2025-26",
-        "  [02] business-doc-classifier     gdańsk         2026",
-        "  [03] explainable-misinfo         imt            2025-26",
-        "  [04] solar-irradiance            imt            2024-25",
+        "  [02] lexflow-legal-dictation     personal       2026",
+        "  [03] demand-forecast-pyspark     gdańsk         2026",
+        "  [04] temp-anomaly-detection      gdańsk         2026",
+        "  [05] business-doc-classifier     gdańsk         2026",
+        "  [06] explainable-misinfo         imt            2025-26",
+        "  [07] webgl-zero-dep-sites        freelance      2026",
+        "  [08] solar-irradiance            imt            2024-25",
       ]);
     } else if (cmd === "contact") {
       out([
