@@ -3,7 +3,7 @@
 //
 // Architecture:
 //   - Single Earth sphere at origin, camera fixed at (0, 0, CAMERA_Z)
-//   - 4 glowing markers at lat/lng of Caen, Brest, Gdańsk, Paris (one per portfolio section)
+//   - 3 glowing markers at lat/lng of Caen, Brest, Gdańsk (one per portfolio section)
 //   - Earth Y-rotation lerps toward the active section's marker longitude — so scrolling
 //     into "about" rotates Caen face-camera, "projets" rotates Brest, etc.
 //   - In "contact" section: free continuous spin (no marker focused)
