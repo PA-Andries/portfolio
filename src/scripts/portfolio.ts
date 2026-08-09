@@ -227,18 +227,18 @@ function initTerminal() {
       );
     } else if (cmd === "skills") {
       out(
-        "python · matlab · pytorch · whisper · cuda · nlp · fastapi · sql · spark · git · webgl · arduino · linux · latex"
+        "python · matlab · pytorch · nlp · fastapi · sql · spark · git · jira · arduino · linux · latex"
       );
     } else if (cmd === "projects") {
       out([
         "  [01] adaptive-spatial-anti-jam   thales x imt   2025-26",
-        "  [02] lexflow-legal-dictation     personal       2026",
-        "  [03] demand-forecast-pyspark     gdańsk         2026",
-        "  [04] temp-anomaly-detection      gdańsk         2026",
-        "  [05] business-doc-classifier     gdańsk         2026",
-        "  [06] explainable-misinfo         imt            2025-26",
-        "  [07] webgl-zero-dep-sites        freelance      2026",
-        "  [08] solar-irradiance            imt            2024-25",
+        "  [02] demand-forecast-pyspark     gdańsk         2026",
+        "  [03] temp-anomaly-detection      gdańsk         2026",
+        "  [04] business-doc-classifier     gdańsk         2026",
+        "  [05] explainable-misinfo         imt            2025-26",
+        "  [06] photogrammetry-3d           imt            2025",
+        "  [07] solar-irradiance            imt            2024-25",
+        "  [08] tipe-tennis-ball-impact     cpge           2022-24",
       ]);
     } else if (cmd === "contact") {
       out([

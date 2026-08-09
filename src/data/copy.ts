@@ -56,7 +56,7 @@ export const COPY = {
       eyebrow: "— PROJETS",
       h2a: "MES",
       h2b: "PROJETS",
-      desc: "Du capteur au modèle. Une chaîne continue : instrumentation et mesure, traitement du signal, pipelines de données distribuées, IA appliquée — et quelques projets logiciels menés de bout en bout.",
+      desc: "Du capteur au modèle. Une chaîne continue : instrumentation et mesure, traitement du signal, pipelines de données distribuées, IA appliquée.",
       tops: [
         { n: "STRYX AI", l: "STAGE RADAR ANTI-DRONE · 2026-27", c: "orange" as const },
         { n: "THALES × IMT", l: "COLLABORATION INDUSTRIELLE 2025-26", c: "cyan" as const },
@@ -70,14 +70,6 @@ export const COPY = {
           title: "ANTIBROUILLAGE ADAPTATIF SPATIAL",
           desc: "Implémentation et évaluation d'un algorithme LCMV pour le rejet adaptatif de brouillage sur un radar automobile millimétrique. Simulation MATLAB, puis validation sur données expérimentales en présence de brouillage et amélioration des performances.",
           tags: ["RADAR", "TRAITEMENT DU SIGNAL", "BEAMFORMING", "PYTHON", "MATLAB"],
-        },
-        {
-          icon: "mic",
-          color: "cyan" as const,
-          meta: "PROJET LIVRÉ · 2026",
-          title: "LEXFLOW — DICTÉE JURIDIQUE 100 % LOCALE",
-          desc: "Outil de dictée vocale pour un cabinet d'avocats, sans aucun envoi de données : transcription Whisper large-v3-turbo sur GPU, amorce de vocabulaire juridique, correction typographique française, puis reformulation par un LLM local sous garde-fous anti-hallucination. ~0,5 s de transcription, ~0,9 s de reformulation.",
-          tags: ["PYTHON", "WHISPER", "CUDA", "LLM LOCAL", "NLP"],
         },
         {
           icon: "chart",
@@ -113,14 +105,6 @@ export const COPY = {
           title: "IA EXPLICABLE — FAUSSES INFORMATIONS",
           desc: "Pipeline NLP combinant classification et interprétabilité, avec reconstruction textuelle d'une version corrigée.",
           tags: ["PYTHON", "PYTORCH", "TRANSFORMERS", "INTERPRÉTABILITÉ"],
-        },
-        {
-          icon: "code",
-          color: "orange" as const,
-          meta: "PROJETS WEB · 2026",
-          title: "SITES SUR MESURE — WEBGL & ZÉRO DÉPENDANCE",
-          desc: "Sites vitrines premium écrits à la main, sans framework ni build : moteur WebGL/GLSL (raymarching, matériaux) et animations en JavaScript natif. LIMARE × EPOXY 27 (peinture & traitement de surface), concept de refonte corporate bilingue FR/EN sur 19 pages, et site de cabinet d'avocats sous Next.js.",
-          tags: ["WEBGL", "GLSL", "JAVASCRIPT", "NEXT.JS", "UI/UX"],
         },
         {
           icon: "cube",
@@ -277,7 +261,7 @@ export const COPY = {
       eyebrow: "— PROJECTS",
       h2a: "MY",
       h2b: "PROJECTS",
-      desc: "From sensor to model. A continuous chain: instrumentation, signal processing, distributed data pipelines, applied AI — plus a few software projects shipped end to end.",
+      desc: "From sensor to model. A continuous chain: instrumentation, signal processing, distributed data pipelines, applied AI.",
       tops: [
         { n: "STRYX AI", l: "COUNTER-UAS RADAR INTERNSHIP · 2026-27", c: "orange" as const },
         { n: "THALES × IMT", l: "INDUSTRIAL COLLAB 2025-26", c: "cyan" as const },
@@ -291,14 +275,6 @@ export const COPY = {
           title: "ADAPTIVE SPATIAL ANTI-JAM",
           desc: "LCMV beamforming for adaptive jammer rejection on a millimetric automotive radar. MATLAB simulation, then validation on experimental data under active jamming and performance tuning.",
           tags: ["RADAR", "SIGNAL PROCESSING", "BEAMFORMING", "PYTHON", "MATLAB"],
-        },
-        {
-          icon: "mic",
-          color: "cyan" as const,
-          meta: "SHIPPED PROJECT · 2026",
-          title: "LEXFLOW — FULLY LOCAL LEGAL DICTATION",
-          desc: "Voice dictation tool for a law firm with zero data leaving the machine: Whisper large-v3-turbo transcription on GPU, legal vocabulary priming, French typography correction, then rewriting by a local LLM with anti-hallucination guardrails. ~0.5 s transcription, ~0.9 s rewrite.",
-          tags: ["PYTHON", "WHISPER", "CUDA", "LOCAL LLM", "NLP"],
         },
         {
           icon: "chart",
@@ -334,14 +310,6 @@ export const COPY = {
           title: "EXPLAINABLE AI — MISINFORMATION",
           desc: "NLP pipeline combining classification and interpretability, with text-level reconstruction of a corrected version.",
           tags: ["PYTHON", "PYTORCH", "TRANSFORMERS", "INTERPRETABILITY"],
-        },
-        {
-          icon: "code",
-          color: "orange" as const,
-          meta: "WEB PROJECTS · 2026",
-          title: "CUSTOM SITES — WEBGL & ZERO DEPENDENCY",
-          desc: "Hand-written premium marketing sites, no framework and no build step: WebGL/GLSL engine (raymarching, materials) and vanilla-JS animation. LIMARE × EPOXY 27 (industrial coating), a bilingual FR/EN 19-page corporate redesign concept, and a law-firm site on Next.js.",
-          tags: ["WEBGL", "GLSL", "JAVASCRIPT", "NEXT.JS", "UI/UX"],
         },
         {
           icon: "cube",
