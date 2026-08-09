@@ -10,6 +10,7 @@ interface Props {
     | "pulse"
     | "mic"
     | "code"
+    | "bounce"
     | "arrowR"
     | "arrowD"
     | "mail"
@@ -106,6 +107,15 @@ const { name, size = 22, class: className = "" } = Astro.props;
       <path d="M8 7 L 3 12 L 8 17" />
       <path d="M16 7 L 21 12 L 16 17" />
       <path d="M13.5 4 L 10.5 20" />
+    </svg>
+  )
+}
+{
+  name === "bounce" && (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class={className}>
+      <path d="M2 4 C 6 12 8 19 11 19 C 14 19 16 13 19 6" />
+      <circle cx="19" cy="6" r="2.6" />
+      <path d="M3 21 H 21" />
     </svg>
   )
 }

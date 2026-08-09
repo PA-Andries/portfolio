@@ -29,7 +29,7 @@ export const COPY = {
     hero: {
       badge: "PORTFOLIO · ÉLÈVE INGÉNIEUR · IMT ATLANTIQUE",
       h1a: "PIERRE-ANTOINE ANDRIÈS",
-      h1b: "SIGNAL · TÉLÉCOMS · IA",
+      h1b: "SIGNAL · TÉLÉCOMS · DATA · IA",
       sub: [
         "Stage de césure ",
         "6 mois",
@@ -82,6 +82,7 @@ export const COPY = {
         {
           icon: "chart",
           color: "cyan" as const,
+          done: true,
           meta: "POLITECHNIKA GDAŃSKA · AVR — JUIN 2026",
           title: "PRÉDICTION DE DEMANDE — PYSPARK",
           desc: "Modèle de prévision de la quantité vendue sur le dataset Online Retail. Split train/test au 25 septembre 2011, évaluation par MAE et prédiction des ventes pour la semaine 39 de 2011. Implémenté avec l'API PySpark pour le traitement distribué.",
@@ -90,6 +91,7 @@ export const COPY = {
         {
           icon: "pulse",
           color: "cyan" as const,
+          done: true,
           meta: "POLITECHNIKA GDAŃSKA · MAI 2026",
           title: "DÉTECTION D'ANOMALIES — TEMPÉRATURE",
           desc: "Pipeline de détection d'anomalies sur un flux de mesures météo (API REST → collecte → nettoyage → détection). Méthodes : moyenne mobile, Z-score, IQR, détection par règles, modèle ML léger. Rapport d'anomalies et visualisation.",
@@ -98,6 +100,7 @@ export const COPY = {
         {
           icon: "brain",
           color: "cyan" as const,
+          done: true,
           meta: "POLITECHNIKA GDAŃSKA · 2026",
           title: "CLASSIFICATION DE DOCUMENTS MÉTIER",
           desc: "Pipeline NLP local de classification par embeddings et règles métier. Centralisation de données issues de sources hétérogènes, exposé via une API FastAPI.",
@@ -134,6 +137,15 @@ export const COPY = {
           title: "MESURE D'IRRADIANCE SOLAIRE",
           desc: "Montage expérimental d'un capteur d'irradiance avec acquisition par Arduino et propagation d'incertitudes par Monte-Carlo.",
           tags: ["CAPTEURS", "ARDUINO", "MONTE-CARLO", "INCERTITUDES"],
+        },
+        {
+          icon: "bounce",
+          color: "cyan" as const,
+          done: true,
+          meta: "CPGE PIERRE-CORNEILLE · 2022 — 2024",
+          title: "TIPE — CHOC D'UNE BALLE DE TENNIS",
+          desc: "Étude mécanique et énergétique du rebond d'une balle de tennis. Montages expérimentaux avec photodiode, laser, Arduino et capteurs de force pour mesurer la vitesse, le coefficient de restitution et l'énergie dissipée — environ 51 ± 22 mJ lors de la compression, reliée à la déformation de la balle. Présenté à l'oral des concours d'entrée aux écoles d'ingénieur.",
+          tags: ["PHYSIQUE EXPÉRIMENTALE", "MÉTROLOGIE", "ARDUINO", "CAPTEURS", "MODÉLISATION"],
         },
       ],
     },
@@ -221,6 +233,7 @@ export const COPY = {
     ui: {
       detailsSoon: "DÉTAILS À VENIR",
       live: "EN COURS",
+      done: "TERMINÉ",
       footer: "© 2026 PIERRE-ANTOINE ANDRIÈS · ORIGINAL DESIGN",
     },
   },
@@ -237,7 +250,7 @@ export const COPY = {
     hero: {
       badge: "PORTFOLIO · ENGINEERING STUDENT · IMT ATLANTIQUE",
       h1a: "PIERRE-ANTOINE ANDRIÈS",
-      h1b: "SIGNAL · TELECOM · AI",
+      h1b: "SIGNAL · TELECOM · DATA · AI",
       sub: [
         "Six-month gap-year ",
         "internship",
@@ -290,6 +303,7 @@ export const COPY = {
         {
           icon: "chart",
           color: "cyan" as const,
+          done: true,
           meta: "POLITECHNIKA GDAŃSKA · APR — JUNE 2026",
           title: "DEMAND FORECASTING — PYSPARK",
           desc: "Forecasting model for product quantity sold on the Online Retail dataset. Train/test split at September 25, 2011, MAE evaluation, and weekly sales prediction (week 39, 2011). Built with the PySpark API for distributed processing.",
@@ -298,6 +312,7 @@ export const COPY = {
         {
           icon: "pulse",
           color: "cyan" as const,
+          done: true,
           meta: "POLITECHNIKA GDAŃSKA · MAY 2026",
           title: "TEMPERATURE ANOMALY DETECTION",
           desc: "Anomaly detection pipeline on a stream of weather measurements (REST API → ingestion → cleaning → detection). Methods: moving average, Z-score, IQR, rule-based detection, lightweight ML model. Anomaly report and visualization.",
@@ -306,6 +321,7 @@ export const COPY = {
         {
           icon: "brain",
           color: "cyan" as const,
+          done: true,
           meta: "POLITECHNIKA GDAŃSKA · 2026",
           title: "BUSINESS DOC CLASSIFICATION",
           desc: "Local NLP pipeline using embeddings and rule-based logic. Centralizing heterogeneous data sources, exposed through a FastAPI service.",
@@ -342,6 +358,15 @@ export const COPY = {
           title: "SOLAR IRRADIANCE MEASUREMENT",
           desc: "Custom irradiance sensor rig with Arduino acquisition and Monte-Carlo uncertainty propagation.",
           tags: ["SENSORS", "ARDUINO", "MONTE-CARLO", "UNCERTAINTY"],
+        },
+        {
+          icon: "bounce",
+          color: "cyan" as const,
+          done: true,
+          meta: "CPGE PIERRE-CORNEILLE · 2022 — 2024",
+          title: "TIPE — TENNIS BALL IMPACT",
+          desc: "Mechanical and energetic study of a tennis ball bouncing. Experimental rigs with photodiode, laser, Arduino and force sensors to measure speed, coefficient of restitution and dissipated energy — around 51 ± 22 mJ during compression, tied to ball deformation. Defended orally at the French engineering-school entrance exams.",
+          tags: ["EXPERIMENTAL PHYSICS", "METROLOGY", "ARDUINO", "SENSORS", "MODELING"],
         },
       ],
     },
@@ -425,6 +450,7 @@ export const COPY = {
     ui: {
       detailsSoon: "DETAILS COMING",
       live: "IN PROGRESS",
+      done: "COMPLETED",
       footer: "© 2026 PIERRE-ANTOINE ANDRIÈS · ORIGINAL DESIGN",
     },
   },

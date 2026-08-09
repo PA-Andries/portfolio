@@ -59,8 +59,10 @@ const en = COPY.en.projects;
         {
           fr.cards.slice(1).map((c, idx) => {
             const i = idx + 1;
-            // Aucun projet n'est "en cours" aujourd'hui — le badge reste câblé pour les prochains.
+            // `live` = chantier en cours, `done` = projet terminé. Un seul badge à la fois.
             const isLive = (c as { live?: boolean }).live === true;
+            const isDone = !isLive && (c as { done?: boolean }).done === true;
+            const hasBadge = isLive || isDone;
             return (
               <div class={`pcard ${c.color === "orange" ? "orange" : ""}`}>
                 {isLive && (
@@ -68,7 +70,12 @@ const en = COPY.en.projects;
                     <span class="i18n-fr">{COPY.fr.ui.live}</span><span class="i18n-en">{COPY.en.ui.live}</span>
                   </span>
                 )}
-                <div style={`display:flex;align-items:center;gap:14px${isLive ? ";padding-right:148px" : ""}`}>
+                {isDone && (
+                  <span class="badge-done">
+                    <span class="i18n-fr">{COPY.fr.ui.done}</span><span class="i18n-en">{COPY.en.ui.done}</span>
+                  </span>
+                )}
+                <div style={`display:flex;align-items:center;gap:14px${hasBadge ? ";padding-right:148px" : ""}`}>
                   <div class="ico">
                     <Icon name={c.icon as any} />
                   </div>

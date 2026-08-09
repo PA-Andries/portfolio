@@ -1,0 +1,13 @@
+{
+  // Site 100 % statique : Astro sort tout dans ./dist, le Worker ne fait que servir
+  // ces fichiers (assets-only, pas de "main"). Sans ce fichier, Workers Builds
+  // échoue instantanément — c'est ce qui bloquait les déploiements depuis juin 2026.
+  "name": "portfolio",
+  "compatibility_date": "2026-05-16",
+  "assets": {
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
